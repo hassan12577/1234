@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مشاركة الكتب الإلكترونية</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>مشاركة الكتب الإلكترونية</h1>
+        <p>شارك كتبك الإلكترونية مع الآخرين</p>
+    </header>
+
+    <div class="container">
+        <main>
+            <section id="upload-section" aria-labelledby="upload-heading">
+                <h2 id="upload-heading">رفع كتاب جديد</h2>
+                <form id="upload-form" role="form" aria-label="نموذج رفع كتاب">
+                    <div class="form-group">
+                        <label for="book-title">عنوان الكتاب</label>
+                        <input type="text" id="book-title" placeholder="أدخل عنوان الكتاب" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="book-author">اسم المؤلف</label>
+                        <input type="text" id="book-author" placeholder="أدخل اسم المؤلف" required aria-required="true">
+                    </div>
+                    <div class="form-group">
+                        <label for="book-category">الفئة</label>
+                        <select id="book-category" required aria-required="true">
+                            <option value="">اختر الفئة</option>
+                            <option value="روايات">روايات</option>
+                            <option value="علمية">علمية</option>
+                            <option value="تاريخية">تاريخية</option>
+                            <option value="دينية">دينية</option>
+                            <option value="أطفال">أطفال</option>
+                            <option value="غير مصنف">غير مصنف</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="book-file">ملف الكتاب</label>
+                        <input type="file" id="book-file" accept=".pdf,.epub,.txt" required aria-describedby="file-help" aria-required="true">
+                        <small id="file-help" class="help-text">قبول ملفات PDF، EPUB، أو TXT فقط</small>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="book-description">وصف الكتاب (اختياري)</label>
+                        <textarea id="book-description" placeholder="أدخل وصفاً مختصراً للكتاب" aria-describedby="description-help"></textarea>
+                        <small id="description-help" class="help-text sr-only">هذا الحقل اختياري</small>
+                    </div>
+                    <div class="form-group full-width">
+                        <button type="submit" aria-describedby="submit-help">رفع الكتاب</button>
+                        <small id="submit-help" class="help-text sr-only">اضغط لرفع الكتاب إلى المكتبة</small>
+                    </div>
+                </form>
+            </section>
+
+            <section id="search-section" aria-labelledby="search-heading">
+                <h2 id="search-heading">البحث عن الكتب</h2>
+                <div class="search-controls" role="search">
+                    <label for="search-input" class="sr-only">بحث عن كتاب أو مؤلف</label>
+                    <input type="text" id="search-input" placeholder="ابحث عن كتاب أو مؤلف..." aria-label="بحث عن كتاب أو مؤلف">
+                    <label for="category-filter" class="sr-only">تصفية حسب الفئة</label>
+                    <select id="category-filter" aria-label="تصفية حسب الفئة">
+                        <option value="">جميع الفئات</option>
+                    </select>
+                    <button id="dark-mode-toggle" title="تبديل الوضع المظلم" aria-label="تبديل الوضع المظلم">🌙</button>
+                </div>
+            </section>
+
+            <section id="books-section" aria-labelledby="books-heading">
+                <h2 id="books-heading">الكتب المشاركة</h2>
+                <div id="books-list" role="list" aria-label="قائمة الكتب"></div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 مشاركة الكتب الإلكترونية</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
